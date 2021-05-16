@@ -14,10 +14,29 @@ defmodule MoonWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", MoonWeb do
-    pipe_through :browser
+  pipeline :admin do
+    plug(:put_root_layout, {Backoffice.LayoutView, :backoffice})
+  end
 
-    live "/", PageLive, :index
+  scope "/", MoonWeb do
+    pipe_through [:browser, :admin]
+
+    live "/", DashboardLive
+
+    live "/users", UserLive.Index
+    live "/users/:id/edit", UserLive.Single
+
+    live "/spaceships", SpaceshipLive.Index
+    live "/spaceships/:id/edit", SpaceshipLive.Single
+
+    live "/rides", RideLive.Index
+    live "/rides/:id/edit", RideLive.Single
+
+    live "/journeys", JourneyLive.Index
+    live "/journeys/:id/edit", JourneyLive.Single
+
+    live "/manufacturers", ManufacturerLive.Index
+    live "/manufacturers/:id/edit", ManufacturerLive.Single
   end
 
   # Other scopes may use custom stacks.

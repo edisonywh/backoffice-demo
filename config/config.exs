@@ -7,6 +7,8 @@
 # General application configuration
 use Mix.Config
 
+config :backoffice, layout: MoonWeb.Backoffice.Layout
+
 config :moon,
   ecto_repos: [Moon.Repo]
 
