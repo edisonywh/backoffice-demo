@@ -3,6 +3,8 @@ module.exports = {
     '../lib/**/*.ex',
     '../lib/**/*.leex',
     '../lib/**/*.eex',
+    '../lib/**/**.ex',
+    '../lib/**/**/**/*.ex',
     './js/**/*.js'
   ],
   darkMode: false, // or 'media' or 'class'

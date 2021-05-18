@@ -4,8 +4,8 @@ defmodule MoonWeb.ColoredWidget do
   defimpl Backoffice.Widget do
     def render(widget) do
       [
-        {:safe,
-         ~s(<div class="px-4 py-5 bg-#{widget.color} shadow rounded-lg overflow-hidden sm:p-6">)},
+        # String interpolating messes with Tailwind purge, for demostration purpose I'll hardcode the color, but you can whitelist the attribute in Tailwind's purge.
+        {:safe, ~s(<div class="px-4 py-5 bg-blue-400 shadow rounded-lg overflow-hidden sm:p-6">)},
         {:safe, ~s(<dt class="text-sm font-medium text-white truncate">)},
         {:safe, to_string(widget.title)},
         {:safe, ~s(</dt>)},
