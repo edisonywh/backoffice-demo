@@ -4,7 +4,7 @@ defmodule Moon.Repo.Migrations.CreateSpaceships do
   def change do
     create table(:spaceships) do
       add :name, :string
-      add :capacity, :integer
+      add :capacity, :integer, null: false, default: 0
       add :manufacturer_id, references(:manufacturers, on_delete: :nothing)
 
       timestamps()

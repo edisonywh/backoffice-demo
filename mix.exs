@@ -48,7 +48,7 @@ defmodule Moon.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:faker, "~> 0.16"},
-      {:backoffice, git: "https://github.com/edisonywh/backoffice", ref: "main"}
+      {:backoffice, git: "https://github.com/edisonywh/backoffice", ref: "43c4d72"}
     ]
   end
 
