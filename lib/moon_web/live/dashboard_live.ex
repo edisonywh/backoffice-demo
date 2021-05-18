@@ -19,7 +19,7 @@ defmodule MoonWeb.DashboardLive do
     <p class='text-2xl font-semibold mb-2'>Widgets</p>
     <p class='text-sm text-gray-400 mb-2'>Backoffice ships with some widgets, but you can easily implement your own with the `Backoffice.Widget` Protocol</p>
     <div class='grid grid-cols-2 lg:grid-cols-3 gap-4'>
-      <%= Backoffice.Widget.render(%Backoffice.PlainWidget{title: "Custom widgets", subtitle: "are easy!"}) %>
+      <%= Backoffice.Widget.render(%MoonWeb.ColoredWidget{title: "Custom widgets", data: "are easy!", color: "blue-400"}) %>
       <%= Backoffice.Widget.render(%Backoffice.PlainWidget{title: "What is the meaning of life?", data: "42"}) %>
     </div>
     </section>
