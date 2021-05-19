@@ -4,6 +4,7 @@ defmodule Moon.Base.Manufacturer do
 
   schema "manufacturers" do
     field :name, :string
+    field :image_url, :string
 
     timestamps()
   end
@@ -11,7 +12,7 @@ defmodule Moon.Base.Manufacturer do
   @doc false
   def changeset(manufacturer, attrs) do
     manufacturer
-    |> cast(attrs, [:name])
+    |> cast(attrs, [:name, :image_url])
     |> validate_required([:name])
   end
 end

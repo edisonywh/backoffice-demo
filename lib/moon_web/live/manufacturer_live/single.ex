@@ -5,4 +5,8 @@ defmodule MoonWeb.ManufacturerLive.Single do
       repo: Moon.Repo
     ],
     resource: Moon.Base.Manufacturer
+
+  form :new do
+    field :name, :string
+  end
 end

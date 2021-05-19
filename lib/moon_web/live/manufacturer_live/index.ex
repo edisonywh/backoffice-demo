@@ -7,28 +7,17 @@ defmodule MoonWeb.ManufacturerLive.Index do
     ],
     resource: Moon.Base.Manufacturer
 
-  # actions do
-  #   action(:create, type: :page, handler: &__MODULE__.create/2)
-  #   action(:retry, type: :single, handler: &__MODULE__.retry/2)
-  # end
+  index do
+    field :id, :id
+    field :name, :string
+    field :image, :string, value: &__MODULE__.image/1
+  end
 
-  # def retry(socket, resource_id) do
-  #   ...
-  #   {:noreply, socket}
-  # end
-
-  # def create(socket, ids) do
-  #   ids = Enum.map(&String.to_integer/1)
-
-  #   {:noreply,
-  #    push_patch(socket,
-  #      to: YourApp.Router.Helpers.live_path(socket, MoonWeb.Backoffice.UserLive.Single, [])
-  #    )}
-  # end
-
-  # index do
-  #   field :id
-  #   field :verified, :boolean
-  #   field :age, :string, render: &__MODULE__.field/1 # 1-arity only, takes the resource itself
-  # end
+  def image(resource) do
+    if resource.image_url != nil do
+      """
+      <img class='rounded-sm' src="#{resource.image_url}" alt="#{resource.name}" />
+      """
+    end
+  end
 end

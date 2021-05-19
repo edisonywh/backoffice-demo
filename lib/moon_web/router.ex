@@ -36,6 +36,7 @@ defmodule MoonWeb.Router do
     live "/journeys/:id/edit", JourneyLive.Single
 
     live "/manufacturers", ManufacturerLive.Index
+    live "/manufacturers/new", ManufacturerLive.Single
     live "/manufacturers/:id/edit", ManufacturerLive.Single
   end
 
