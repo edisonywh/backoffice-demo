@@ -13,6 +13,7 @@ defmodule Moon.Application do
       MoonWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: Moon.PubSub},
+      Moon.Periodic,
       # Start the Endpoint (http/https)
       MoonWeb.Endpoint
       # Start a worker by calling: Moon.Worker.start_link(arg)

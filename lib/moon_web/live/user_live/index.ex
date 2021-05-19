@@ -19,13 +19,15 @@ defmodule MoonWeb.UserLive.Index do
   end
 
   def mount(params, session, socket) do
-    if connected?(socket), do: Phoenix.PubSub.subscribe(Moon.PubSub, "users")
+    if connected?(socket) do
+      Phoenix.PubSub.subscribe(Moon.PubSub, "users")
+    end
 
     do_mount(params, session, socket)
   end
 
   def handle_info({level, text}, socket) do
-    {:noreply, push_notification(socket, level: level, title: "You've selected", subtitle: text)}
+    {:noreply, push_notification(socket, level: level, title: "Title", subtitle: text)}
   end
 
   def page(socket, ids) do

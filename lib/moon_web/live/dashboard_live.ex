@@ -27,6 +27,7 @@ defmodule MoonWeb.DashboardLive do
     <section class="mb-8">
     <p class='text-2xl font-semibold mb-2'>Notifications</p>
     <p class='text-sm text-gray-400 mb-2'>Click on the button to see a pop-up notification (triggered by PubSub)</p>
+    <p class='text-sm text-gray-400 mb-2'>Also check out the Spaceships tab for a periodic PubSub example</p>
     <button type='button' phx-click='broadcast' class='bg-indigo-500 p-4 cursor-pointer text-white rounded shadow'>Hello Code BEAM!</button>
     </section>
 
