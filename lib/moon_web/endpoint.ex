@@ -27,7 +27,7 @@ defmodule MoonWeb.Endpoint do
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Provide a static plug to serve backoffice files
-  # You can change the `at` value if you are using backoffice
+  # You can change the `at` value if you are using the "/backoffice" path
   plug Plug.Static,
     at: "/backoffice",
     from: :backoffice,
