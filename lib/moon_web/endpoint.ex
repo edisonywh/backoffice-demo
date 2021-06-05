@@ -26,6 +26,14 @@ defmodule MoonWeb.Endpoint do
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
+  # Provide a static plug to serve backoffice files
+  # You can change the `at` value if you are using the "/backoffice" path
+  plug Plug.Static,
+    at: "/backoffice",
+    from: :backoffice,
+    gzip: false,
+    only: ~w(css js)
+
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
